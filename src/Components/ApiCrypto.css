@@ -1,0 +1,20 @@
+.ApiCrypto{
+    text-align: center;
+}
+
+.ApiCryptoCard{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 20px;
+}
+
+.ApiCryptoCard div{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
