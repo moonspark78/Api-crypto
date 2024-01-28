@@ -25,6 +25,11 @@ export const ApiCrypto = () => {
                 <Link to={`/crypto/${crypto.id}`}>
                 <div key={crypto.id}>
                     <p>{crypto.name}</p>
+                    <img 
+                            src={`https://assets.coincap.io/assets/icons/${crypto.symbol.toLowerCase()}@2x.png`} 
+                            alt={`${crypto.name} Icon`}
+                            style={{width:"64px", height:"64px"}}
+                    />
                     <a href={crypto.explorer} target='blank'>Info Sur l' {crypto.name}</a>
                 </div>
                 </Link>

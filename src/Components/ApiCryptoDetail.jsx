@@ -27,6 +27,11 @@ export const ApiCryptoDetail = () => {
                 <p>Rank: {cryptoDetail.rank}</p>
                 <p>Supply: {cryptoDetail.supply}</p>
                 <p>Price USD: {cryptoDetail.priceUsd}</p>
+                <img 
+                            src={`https://assets.coincap.io/assets/icons/${cryptoDetail.symbol.toLowerCase()}@2x.png`} 
+                            alt={`${crypto.name} Icon`}
+                            style={{width:"64px", height:"64px"}}
+                />
                 {/* Add more details as needed */}
             </div>
         </div>
