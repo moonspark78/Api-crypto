@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./ApiCrypto.css"
+import { Link } from 'react-router-dom';
 
 export const ApiCrypto = () => {
     const [cryptoData, setCryptoData] = useState([]);
@@ -21,10 +22,12 @@ export const ApiCrypto = () => {
         <div className='ApiCryptoCard'>
         {
             cryptoData.map(crypto => (
-                <div>
+                <Link to={`/crypto/${crypto.id}`}>
+                <div key={crypto.id}>
                     <p>{crypto.name}</p>
                     <a href={crypto.explorer} target='blank'>Info Sur l' {crypto.name}</a>
                 </div>
+                </Link>
             ))
         }
         </div>
