@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import "./ApiCrypto.css"
 import { Link } from 'react-router-dom';
+import { useCryptoContext } from "../Context/CryptoProvider"
 
 export const ApiCrypto = () => {
-    const [cryptoData, setCryptoData] = useState([]);
+    const { cryptoData, setCryptoData } = useCryptoContext();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,7 +14,7 @@ export const ApiCrypto = () => {
             setCryptoData(data.data)
         };
         fetchData();
-    },[]);
+    },[setCryptoData]);
 
 
   return (

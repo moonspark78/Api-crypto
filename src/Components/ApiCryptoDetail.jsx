@@ -1,20 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
+import { useCryptoContext } from "../Context/CryptoProvider"
 
 export const ApiCryptoDetail = () => {
     const { id } = useParams();
-    const [cryptoDetail, setCryptoDetail] = useState(null);
+    const { cryptoData } = useCryptoContext();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`https://api.coincap.io/v2/assets/${id}`);
-            const data = await response.json();
-            console.log(data.data);
-            setCryptoDetail(data.data)
-        };
-        fetchData();
-    }, [id]);
-
+    const cryptoDetail = cryptoData.find(crypto => crypto.id === id);
     if (!cryptoDetail) {
         return <div>Loading...</div>;
     }
