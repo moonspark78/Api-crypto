@@ -31,7 +31,6 @@ export const ApiCrypto = () => {
                             alt={`${crypto.name} Icon`}
                             style={{width:"64px", height:"64px"}}
                     />
-                    <a href={crypto.explorer} target='blank'>Info Sur l' {crypto.name}</a>
                 </div>
                 </Link>
             ))
