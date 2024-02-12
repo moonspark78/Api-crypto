@@ -5,6 +5,7 @@ import { useCryptoContext } from "../Context/CryptoProvider"
 
 export const ApiCrypto = () => {
     const { cryptoData, setCryptoData } = useCryptoContext();
+    const [searchValue, setSearchValue] = useState("")
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,7 +21,16 @@ export const ApiCrypto = () => {
   return (
     <div className='ApiCrypto'>
          <h3 style={{textDecoration:"underline", color:"red"}}>ApiCrypto</h3>
-         <input placeholder="Searth the internet..." type="text" name="text" class="input"/>
+
+         <input 
+            placeholder="Searth the internet..." 
+            type="text" 
+            name="text" 
+            class="input"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+        />
+
         <div className='ApiCryptoCard'>
         {
             cryptoData.map(crypto => (
