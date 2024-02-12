@@ -17,6 +17,9 @@ export const ApiCrypto = () => {
         fetchData();
     },[setCryptoData]);
 
+    const filteredData = cryptoData.filter((country) =>
+    country.name.toLowerCase().includes(searchValue.toLowerCase()))
+
 
   return (
     <div className='ApiCrypto'>
@@ -33,7 +36,7 @@ export const ApiCrypto = () => {
 
         <div className='ApiCryptoCard'>
         {
-            cryptoData.map(crypto => (
+            filteredData.map(crypto => (
                 <Link to={`/crypto/${crypto.id}`}>
                 <div key={crypto.id}>
                     <p>{crypto.name}</p>
