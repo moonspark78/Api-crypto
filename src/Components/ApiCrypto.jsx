@@ -20,6 +20,7 @@ export const ApiCrypto = () => {
   return (
     <div className='ApiCrypto'>
          <h3 style={{textDecoration:"underline", color:"red"}}>ApiCrypto</h3>
+         <input placeholder="Searth the internet..." type="text" name="text" class="input"/>
         <div className='ApiCryptoCard'>
         {
             cryptoData.map(crypto => (
